@@ -1,0 +1,71 @@
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css'>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+<div id="map"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<script>
+  // TO MAKE THE MAP APPEAR YOU MUST
+  // ADD YOUR ACCESS TOKEN FROM
+  // https://account.mapbox.com
+  mapboxgl.accessToken = "맵박스토큰";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v11",
+    center: [127.105243, 37.358745],
+    zoom: 19,
+    pitch: 61
+  });
+
+  map.on("load", () => {
+    map.getSource
+    map.addSource("floor", {
+      type: "geojson",
+      data: "http://localhost:3000/data.geojson",
+    });
+    map.addLayer(
+    { // 라인
+      id: "floor",
+      type: "line",
+      source: "floor",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+      paint: {
+        "line-color": "#888",
+        "line-width": 1,
+      },
+    }, 
+    // { // 채우기
+    //   id: "floor",
+    //   type: 'fill',
+    //   type: 'fill-extrusion',
+    //   source: "floor",
+    //   paint: {
+    //     "fill-color": '#888',
+    //     "fill-outline-color": 'cyan'
+    //   },
+    // },
+    // { // 빌딩
+    //   id: "floor",
+    //   type: 'fill-extrusion',
+    //   source: "floor",
+    //   paint: {
+    //     "fill-extrusion-height": 1,
+    //     "fill-extrusion-opacity": 0.3
+    //   },
+    // }
+    );
+  });
+</script>

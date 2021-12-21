@@ -4,7 +4,8 @@
   "description": "좌석 지도 구축",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/4pioneer/seatland/issues"
   },
-  "homepage": "https://github.com/4pioneer/seatland#readme"
+  "homepage": "https://github.com/4pioneer/seatland#readme",
+  "devDependencies": {
+    "express": "^4.17.2"
+  }
 }
