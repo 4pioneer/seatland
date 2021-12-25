@@ -31,7 +31,7 @@
     map.getSource
     map.addSource("floor", {
       type: "geojson",
-      data: "http://localhost:3000/data.geojson",
+      data: "http://localhost:3000/data/data.geojson",
     });
     map.addLayer(
     { // 라인
@@ -46,7 +46,7 @@
         "line-color": "#888",
         "line-width": 1,
       },
-    }, 
+    },
     // { // 채우기
     //   id: "floor",
     //   type: 'fill',
