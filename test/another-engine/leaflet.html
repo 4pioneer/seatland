@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Leaflet 테스트</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+        html, body, #map{
+            width: 100%;
+            height: 800px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap" class="section">
+    <a href="../index.html" class="back">← Test</a><br /><br />
+    <h2>Leaflet Extension Methods</span></h2>
+    <div id="map" style="width:100%;height:800px;"></div>
+</div>
+<script id="code">
+    const zoom = [16, 8, 4, 2, 1, 0.5];
+    const map = L.map('map').setView([0, 0], 1);
+    L.TileLayer.Subway = L.TileLayer.extend({
+      getTileUrl: function(coords) {
+        return `http://onetile3.map.naver.net/subway_get/6.27/1000/512/${zoom[coords.z]}/${coords.x}/${coords.y}`
+      },
+      getAttribution: function() {
+        return "<a href='https://map.naver.com/v5/settings/legal-notice'>© NAVER</a>"
+      }
+    });
+
+    L.tileLayer.subway = function() {
+      return new L.TileLayer.Subway();
+    }
+
+    L.tileLayer.subway().addTo(map);
+</script>
+
+</body>
+</html>

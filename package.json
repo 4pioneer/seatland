@@ -4,7 +4,7 @@
   "description": "좌석 지도 구축",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node server.js test",
     "start": "node server.js"
   },
   "repository": {
