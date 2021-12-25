@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>OpenLayers 테스트</title>
+    <title>OpenLayers SVG Layer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
     <style>
@@ -99,7 +99,7 @@
     const [x, y] = e.coordinate;
     const [nx, ny] = [(x + tileHalfWidth) / tileFullWidth, ((y - tileHalfHeight) * -1) / tileFullHeight];
     const [px, py] = [svgWidth * nx, svgHeight * ny];
-    console.log(`[${x.toFixed(0)},${y.toFixed(0)}], [${nx.toFixed(2)},${ny.toFixed(2)}], [${px.toFixed(0)},${py.toFixed(0)}`);
+    console.log(`[${x.toFixed(0)},${y.toFixed(0)}], [${nx.toFixed(2)},${ny.toFixed(2)}], [${px.toFixed(0)},${py.toFixed(0)}]`);
   });
 
 </script>
