@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>MapBox 테스트</title>
+    <title>MapBox 코로나 GeoJSON 테스트</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css'>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <style>
@@ -23,7 +23,7 @@
 </head>
 <body>
 <div id="wrap" class="section">
-    <h2>MapBox 테스트</span></h2>
+    <h2>MapBox 코로나 GeoJSON 테스트</span></h2>
     <div id="map"></div>
 </div>
 
@@ -32,8 +32,8 @@
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11",
-    center: [127.105243, 37.358745],
-    zoom: 19,
+    center: [-105.63758647442037, 44.95054782134156],
+    zoom: 4,
     pitch: 61
   });
 
@@ -41,7 +41,7 @@
     map.getSource
     map.addSource("floor", {
       type: "geojson",
-      data: "http://localhost:3000/data.geojson",
+      data: "https://raw.githubusercontent.com/DiegoFurtt/Covid-19-Choropleth-Map/master/covidData.geojson",
     });
     map.addLayer(
       { // 라인
