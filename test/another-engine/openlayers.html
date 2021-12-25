@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>OpenLayers 테스트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+    <style>
+        #map{
+            width: 100%;
+            height: 800px;
+            margin: 0;
+            background-color: #F2789F;
+        }
+        .ol-mouse-position {
+            font-size: 40px;
+            color: #DD4A48;
+        }
+    </style>
+    </head>
+</head>
+<body>
+<div id="wrap" class="section">
+    <h2>OpenLayers SVG Layer</span></h2>
+    <div id="map"></div>
+</div>
+
+<script>
+  const mousePositionControl = new ol.control.MousePosition({
+    coordinateFormat: ol.coordinate.createStringXY(0),
+  });
+
+  const svgWidth = 4082;
+  const svgHeight = 3309;
+  const extent = [0, 0, svgWidth, svgHeight];
+  var projection = new ol.proj.Projection({
+    code: 'static-image',
+    units: 'pixels',
+    extent
+  });
+
+  const map = new ol.Map({
+    target: 'map',
+    controls: [mousePositionControl],
+    view: new ol.View({
+      center: [0, 0],
+      projection,
+      zoom: 5,
+    }),
+  });
+
+  const svgContainer = document.createElement('div');
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '../assets/img/provide.svg');
+  xhr.addEventListener('load', function () {
+    const svg = xhr.responseXML.documentElement;
+    svgContainer.ownerDocument.importNode(svg);
+    svgContainer.appendChild(svg);
+  });
+  xhr.send();
+
+  const svgResolution = 360 / svgWidth;
+  svgContainer.style.width = svgWidth + 'px';
+  svgContainer.style.height = svgHeight + 'px';
+  svgContainer.style.transformOrigin = 'top left';
+  svgContainer.className = 'svg-layer';
+
+  map.addLayer(
+    new ol.layer.Layer({
+      render: function (frameState) {
+        const scale = svgResolution / frameState.viewState.resolution;
+        const center = frameState.viewState.center;
+        const size = frameState.size;
+        const cssTransform = ol.transform.composeCssTransform(
+          size[0] / 2,
+          size[1] / 2,
+          scale,
+          scale,
+          frameState.viewState.rotation,
+          -center[0] / svgResolution - svgWidth / 2,
+          center[1] / svgResolution - svgHeight / 2
+        );
+        svgContainer.style.transform = cssTransform;
+        svgContainer.style.opacity = this.getOpacity();
+        return svgContainer;
+      },
+    })
+  );
+
+  const tileHalfWidth = 180,
+    tileFullWidth = 360,
+    tileHalfHeight = 147,
+    tileFullHeight = 297;
+
+  map.on('pointermove', (e) => {
+    console.log('e', e);
+    const [x, y] = e.coordinate;
+    const [nx, ny] = [(x + tileHalfWidth) / tileFullWidth, ((y - tileHalfHeight) * -1) / tileFullHeight];
+    const [px, py] = [svgWidth * nx, svgHeight * ny];
+    console.log(`[${x.toFixed(0)},${y.toFixed(0)}], [${nx.toFixed(2)},${ny.toFixed(2)}], [${px.toFixed(0)},${py.toFixed(0)}`);
+  });
+
+</script>
+</body>
+</html>
