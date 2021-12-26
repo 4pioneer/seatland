@@ -38,7 +38,7 @@
     L.TileLayer.Subway = L.TileLayer.extend({
       getTileUrl: function(coords) {
         const { prefix, version, region, hd, zoom } = options;
-        return `${prefix}${version}/${region}/${hd}/${zoom[coords.z]}/${coords.x}/${coords.y}`
+        return `${prefix}/${version}/${region}/${hd}/${zoom[coords.z]}/${coords.x}/${coords.y}`
       },
       getAttribution: function() {
         return "<a href='https://map.naver.com/v5/settings/legal-notice'>© NAVER</a>"

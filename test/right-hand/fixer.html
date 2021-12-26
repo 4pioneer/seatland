@@ -23,9 +23,8 @@
 <script id="code">
 
   const xhr = new XMLHttpRequest();
-  console.log('xhr', xhr);
   xhr.responseType = 'json';
-  xhr.open('GET', '../../data/data-properties.geojson', true);
+  xhr.open('GET', '../../data/data-greyfactory-properties.geojson', true);
   xhr.addEventListener('load', function () {
     const geojson = xhr.response;
     // 선형 링은 경계 영역과 관련하여 오른손 법칙을 따라야 합니다. 즉, 외부 링은 시계 반대 방향이고 구멍은 시계 방향입니다.
