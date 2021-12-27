@@ -5,8 +5,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -40,8 +39,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -75,8 +73,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -110,8 +107,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -145,8 +141,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -180,8 +175,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -215,8 +209,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -250,8 +243,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -285,8 +277,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -320,8 +311,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -355,8 +345,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -390,8 +379,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -425,8 +413,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -460,8 +447,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -495,8 +481,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -530,8 +515,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -565,8 +549,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -600,8 +583,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -635,8 +617,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -670,8 +651,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -705,8 +685,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -740,8 +719,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -775,8 +753,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -810,8 +787,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -845,8 +821,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -880,8 +855,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -915,8 +889,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -950,8 +923,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -985,8 +957,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1020,8 +991,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1055,8 +1025,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1090,8 +1059,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1125,8 +1093,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1160,8 +1127,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1195,8 +1161,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1230,8 +1195,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1265,8 +1229,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1300,8 +1263,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1335,8 +1297,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1370,8 +1331,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1405,8 +1365,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1440,8 +1399,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1475,8 +1433,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1510,8 +1467,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1545,8 +1501,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1580,8 +1535,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1615,8 +1569,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1650,8 +1603,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1685,8 +1637,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1720,8 +1671,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1755,8 +1705,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1790,8 +1739,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1825,8 +1773,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1860,8 +1807,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1895,8 +1841,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1930,8 +1875,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -1965,8 +1909,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2000,8 +1943,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2035,8 +1977,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2070,8 +2011,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2105,8 +2045,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2140,8 +2079,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2175,8 +2113,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2210,8 +2147,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2245,8 +2181,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2280,8 +2215,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2315,8 +2249,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2350,8 +2283,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2385,8 +2317,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2420,8 +2351,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2455,8 +2385,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2490,8 +2419,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2525,8 +2453,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2560,8 +2487,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2595,8 +2521,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2630,8 +2555,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2665,8 +2589,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2700,8 +2623,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2735,8 +2657,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2770,8 +2691,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2805,8 +2725,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2840,8 +2759,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2875,8 +2793,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2910,8 +2827,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2945,8 +2861,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -2980,8 +2895,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3015,8 +2929,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3050,8 +2963,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3085,8 +2997,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3120,8 +3031,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3155,8 +3065,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3190,8 +3099,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3225,8 +3133,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3260,8 +3167,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3295,8 +3201,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3330,8 +3235,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3365,8 +3269,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3400,8 +3303,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3435,8 +3337,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3470,8 +3371,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3505,8 +3405,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3540,8 +3439,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3575,8 +3473,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3610,8 +3507,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3645,8 +3541,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3680,8 +3575,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3715,8 +3609,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3750,8 +3643,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3785,8 +3677,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3820,8 +3711,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3855,8 +3745,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3890,8 +3779,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3925,8 +3813,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3960,8 +3847,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -3995,8 +3881,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4030,8 +3915,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4065,8 +3949,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4100,8 +3983,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4135,8 +4017,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4170,8 +4051,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4205,8 +4085,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4240,8 +4119,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4275,8 +4153,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4310,8 +4187,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4345,8 +4221,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4380,8 +4255,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4415,8 +4289,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4450,8 +4323,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4485,8 +4357,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4520,8 +4391,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4555,8 +4425,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4590,8 +4459,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4625,8 +4493,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4660,8 +4527,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4695,8 +4561,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4730,8 +4595,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4765,8 +4629,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4800,8 +4663,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4835,8 +4697,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4870,8 +4731,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4905,8 +4765,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4940,8 +4799,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -4975,8 +4833,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5010,8 +4867,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5045,8 +4901,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5080,8 +4935,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5115,8 +4969,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5150,8 +5003,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5185,8 +5037,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5220,8 +5071,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5255,8 +5105,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5290,8 +5139,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5325,8 +5173,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5360,8 +5207,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5395,8 +5241,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5430,8 +5275,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5465,8 +5309,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5500,8 +5343,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5535,8 +5377,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5570,8 +5411,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5605,8 +5445,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5640,8 +5479,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5675,8 +5513,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5710,8 +5547,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5745,8 +5581,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5780,8 +5615,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5815,8 +5649,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5850,8 +5683,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5885,8 +5717,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5920,8 +5751,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5955,8 +5785,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -5990,8 +5819,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6025,8 +5853,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6060,8 +5887,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6095,8 +5921,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6130,8 +5955,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6165,8 +5989,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6200,8 +6023,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6235,8 +6057,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6270,8 +6091,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6305,8 +6125,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6340,8 +6159,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6375,8 +6193,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6410,8 +6227,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6445,8 +6261,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6480,8 +6295,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6515,8 +6329,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6550,8 +6363,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6585,8 +6397,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6620,8 +6431,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6655,8 +6465,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6690,8 +6499,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6725,8 +6533,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6760,8 +6567,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6795,8 +6601,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6830,8 +6635,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6865,8 +6669,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6900,8 +6703,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6935,8 +6737,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -6970,8 +6771,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7005,8 +6805,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7040,8 +6839,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7075,8 +6873,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7110,8 +6907,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7145,8 +6941,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7180,8 +6975,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7215,8 +7009,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7250,8 +7043,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7285,8 +7077,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7320,8 +7111,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7355,8 +7145,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7390,8 +7179,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7425,8 +7213,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7460,8 +7247,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7495,8 +7281,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7530,8 +7315,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7565,8 +7349,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7600,8 +7383,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7635,8 +7417,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7670,8 +7451,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7705,8 +7485,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7740,8 +7519,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7775,8 +7553,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7810,8 +7587,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7845,8 +7621,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7880,8 +7655,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7915,8 +7689,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7950,8 +7723,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -7985,8 +7757,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8020,8 +7791,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8055,8 +7825,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8090,8 +7859,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8125,8 +7893,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8160,8 +7927,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8195,8 +7961,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8230,8 +7995,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8265,8 +8029,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8300,8 +8063,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8335,8 +8097,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8370,8 +8131,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8405,8 +8165,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8440,8 +8199,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8475,8 +8233,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8510,8 +8267,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8545,8 +8301,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8580,8 +8335,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8615,8 +8369,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8650,8 +8403,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8685,8 +8437,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8720,8 +8471,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8755,8 +8505,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8790,8 +8539,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8825,8 +8573,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8860,8 +8607,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8895,8 +8641,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8930,8 +8675,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -8965,8 +8709,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9000,8 +8743,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9035,8 +8777,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9070,8 +8811,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9105,8 +8845,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9140,8 +8879,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9175,8 +8913,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9210,8 +8947,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9245,8 +8981,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9280,8 +9015,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9315,8 +9049,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9350,8 +9083,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9385,8 +9117,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9420,8 +9151,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9455,8 +9185,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9490,8 +9219,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9525,8 +9253,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9560,8 +9287,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9595,8 +9321,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9630,8 +9355,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9665,8 +9389,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9700,8 +9423,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9735,8 +9457,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9770,8 +9491,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9805,8 +9525,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9840,8 +9559,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9875,8 +9593,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9910,8 +9627,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9945,8 +9661,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -9980,8 +9695,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10015,8 +9729,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10050,8 +9763,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10085,8 +9797,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10120,8 +9831,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10155,8 +9865,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10190,8 +9899,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10225,8 +9933,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10260,8 +9967,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10295,8 +10001,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10330,8 +10035,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10365,8 +10069,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10400,8 +10103,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10435,8 +10137,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10470,8 +10171,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10505,8 +10205,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10540,8 +10239,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10575,8 +10273,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10610,8 +10307,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10645,8 +10341,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10680,8 +10375,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10715,8 +10409,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10750,8 +10443,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10785,8 +10477,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10820,8 +10511,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10855,8 +10545,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10890,8 +10579,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10925,8 +10613,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10960,8 +10647,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -10995,8 +10681,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11030,8 +10715,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11065,8 +10749,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11100,8 +10783,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11135,8 +10817,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11170,8 +10851,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11205,8 +10885,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11240,8 +10919,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11275,8 +10953,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11310,8 +10987,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11345,8 +11021,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11380,8 +11055,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11415,8 +11089,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11450,8 +11123,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11485,8 +11157,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11520,8 +11191,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11555,8 +11225,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11590,8 +11259,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11625,8 +11293,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11660,8 +11327,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11695,8 +11361,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11730,8 +11395,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11765,8 +11429,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11800,8 +11463,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11835,8 +11497,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11870,8 +11531,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11905,8 +11565,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11940,8 +11599,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -11975,8 +11633,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12010,8 +11667,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12045,8 +11701,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12080,8 +11735,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12115,8 +11769,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12150,8 +11803,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12185,8 +11837,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12220,8 +11871,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12255,8 +11905,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12290,8 +11939,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12325,8 +11973,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12360,8 +12007,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12395,8 +12041,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12430,8 +12075,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12465,8 +12109,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12500,8 +12143,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12535,8 +12177,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12570,8 +12211,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12605,8 +12245,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12640,8 +12279,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12675,8 +12313,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12710,8 +12347,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12745,8 +12381,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12780,8 +12415,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12815,8 +12449,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12850,8 +12483,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12885,8 +12517,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12920,8 +12551,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12955,8 +12585,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -12990,8 +12619,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13025,8 +12653,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13060,8 +12687,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13095,8 +12721,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13130,8 +12755,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13165,8 +12789,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13200,8 +12823,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13235,8 +12857,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13270,8 +12891,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13305,8 +12925,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13340,8 +12959,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13375,8 +12993,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13410,8 +13027,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13445,8 +13061,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13480,8 +13095,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13515,8 +13129,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13550,8 +13163,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13585,8 +13197,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13620,8 +13231,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13655,8 +13265,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13690,8 +13299,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13725,8 +13333,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13760,8 +13367,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13795,8 +13401,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13830,8 +13435,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13865,8 +13469,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13900,8 +13503,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13935,8 +13537,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -13970,8 +13571,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14005,8 +13605,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14040,8 +13639,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14075,8 +13673,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14110,8 +13707,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14145,8 +13741,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14180,8 +13775,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14215,8 +13809,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14250,8 +13843,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14285,8 +13877,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14320,8 +13911,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14355,8 +13945,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14390,8 +13979,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14425,8 +14013,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14460,8 +14047,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14495,8 +14081,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14530,8 +14115,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14565,8 +14149,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14600,8 +14183,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14635,8 +14217,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14670,8 +14251,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14705,8 +14285,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14740,8 +14319,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14775,8 +14353,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14810,8 +14387,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14845,8 +14421,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14880,8 +14455,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14915,8 +14489,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14950,8 +14523,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -14985,8 +14557,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -15020,8 +14591,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -15055,8 +14625,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
@@ -15090,8 +14659,7 @@
       "type": "Feature",
       "properties": {
         "name": "-",
-        "amenity": "-",
-        "popupContent": "-"
+        "type": "seat"
       },
       "geometry": {
         "type": "Polygon",
