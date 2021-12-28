@@ -16,6 +16,18 @@
             background-color: #EBEDEF;
             position: fixed;
         }
+        #export {
+            bottom: 24px;
+            right: 14px;
+            position: absolute;
+        }
+        #textarea {
+            right: 14px;
+            top: 14px;
+            width: 115px;
+            height: 260px;
+            position: absolute;
+        }
     </style>
 </head>
 </head>
@@ -23,8 +35,70 @@
 <div class='section' id='wrap'>
     <h2>MapBox Edit Properties 테스트</span></h2>
     <div id='map'></div>
+    <button id="export" type="button">EXPORT</button>
+    <textarea id="textarea"></textarea>
 </div>
 
+<script>
+  const getDefaultEmployee = (value) => {
+    return value === '' || value === '-' ? 'KR' : value;
+  };
+
+  const featureToGeoJSON = (feature) => {
+    const {type, properties, geometry} = feature;
+    return {
+      type,
+      properties: {
+        ...properties
+      },
+      geometry: {
+        ...geometry
+      }
+    }
+  };
+
+  const getGeoJSON = (features) => {
+    return {
+      "type": "FeatureCollection",
+      features,
+    }
+  };
+
+  const getFeatures = (map, layerId) => {
+    return map.queryRenderedFeatures({layers: [layerId]}).reduce((accumulator, value) => {
+      accumulator.push(featureToGeoJSON(value));
+      return accumulator;
+    }, []);
+  };
+
+  const getFeatureId = (feature) => {
+    return feature?.geometry?.coordinates?.join(',') ?? '';
+  };
+
+  const updateGeoJSON = ({geojson, featureId, propertyName, propertyValue}) => {
+    const selectedFeature = getFeature({geojson, featureId});
+    selectedFeature.properties[propertyName] = propertyValue;
+  };
+
+  const getFeature = ({geojson, featureId}) => {
+    return geojson.features.find(feature => featureId === getFeatureId(feature));
+  };
+
+  const find = (geojson, propertyName, propertyValue) => {
+    return geojson.features.find(feature => feature.properties[propertyName] === propertyValue);
+  };
+
+  const exportGeoJSON = (json, exportName = 'geojson') => {
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(json));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  };
+
+</script>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoidHdpcGl4ZWwiLCJhIjoiY2pjeTdwZDV0MDR0bDJ2bHFncTI1c2FrdSJ9.IGpAPpo9nmEOrJgjjEIvEw';
 
@@ -71,7 +145,13 @@
     ev: 'ev',
     ps: 'ps',
     tps: 'tps',
+    wall: 'wall',
+    unknown: 'unknown',
   };
+
+  const types = Object.keys(label);
+  const textarea = document.getElementById('textarea');
+  textarea.value = types.join('\n');
 
   const lt = [127.10465294151231, 37.3593150852346],
     rt = [127.10570973186645, 37.3593150852346],
@@ -107,7 +187,6 @@
           {
             'type': 'Feature',
             'properties': {
-              index: 2,
               'label': 'rb',
             },
             'geometry': {
@@ -186,15 +265,29 @@
       }
     });
 
-    map.addSource('greyfactory', {
+    map.addSource('9th', {
       type: 'geojson',
       data: '../../data/data-greyfactory-9th.geojson',
     });
 
+    const geojson = {
+      'type': 'FeatureCollection',
+      features: [],
+    };
+    window.geojson = geojson;
+
+    map.on('idle', () => {
+      if (geojson.features.length !== 0) return;
+      geojson.features = getFeatures(map, floorLayerId);
+    });
+
+    const exportButton = document.getElementById('export');
+    exportButton.addEventListener('click', () => exportGeoJSON(geojson));
+
     map.addLayer(
       {
-        id: 'greyfactory',
-        source: 'greyfactory',
+        id: '9th',
+        source: '9th',
         'type': 'fill',
         'paint': {
           'fill-color': 'rgba(200, 100, 240, 0.4)',
@@ -207,15 +300,23 @@
       console.log(`[${e.lngLat.lng}, ${e.lngLat.lat}]`);
     });
 
-    map.on('click', 'greyfactory', (e) => {
-      const { name, type } = e.features[0]?.properties;
+    let defaultTypeValue = 'seat';
+    const floorLayerId = '9th';
+
+    map.on('click', floorLayerId, (e) => {
+      const selectedFeature = map.queryRenderedFeatures(e.point, {
+        layers: [floorLayerId]
+      })?.[0];
+      if (!selectedFeature) return;
+
+      const {employee, type} = e.features[0]?.properties;
       const html =
         `<div>
-            <input id="input-name" type="text" name="name" size="10" value="${name}">
-            <button id="name-confirm" name="confirm" type="button">이름 입력</button>
+            <input id="input-employee" type="text" name="employee" size="10" value="">
+            <button id="button-employee" name="confirm" type="button">사번 입력</button>
             <br>
-            <input id="input-type" type="text" name="type" size="10" value="${type}">
-            <button id="type-confirm" name="confirm" type="button">타입 입력</button>
+            <input id="input-type" type="text" name="type" size="10" value="${defaultTypeValue}">
+            <button id="button-type" name="confirm" type="button">타입 입력</button>
         </div>`;
 
       new mapboxgl.Popup()
@@ -223,21 +324,33 @@
         .setHTML(html)
         .addTo(map);
 
-      const nameButton = document.getElementById('name-confirm');
-      const typeButton = document.getElementById('type-confirm');
-      nameButton.addEventListener('click', () => {
-        const name = document.getElementById('input-name').value || '';
-        console.log(name);
+      const inputEmployee = document.getElementById('input-employee');
+      inputEmployee.value = getDefaultEmployee(employee);
+      const inputType = document.getElementById('input-type');
+      inputType.addEventListener('keyup', () => {
+        defaultTypeValue = inputType.value;
       });
-
-      typeButton.addEventListener('click', () => {
-        const type = document.getElementById('input-type').value || '';
-        console.log(type);
-      })
+      const buttonEmployee = document.getElementById('button-employee');
+      const buttonType = document.getElementById('button-type');
+      buttonEmployee.addEventListener('click', () => {
+        updateGeoJSON({
+          geojson,
+          featureId: getFeatureId(selectedFeature),
+          propertyName: 'employee',
+          propertyValue: document.getElementById('input-employee').value
+        });
+      });
+      buttonType.addEventListener('click', () => {
+        updateGeoJSON({
+          geojson,
+          featureId: getFeatureId(selectedFeature),
+          propertyName: 'type',
+          propertyValue: document.getElementById('input-type').value
+        });
+      });
     });
 
   });
-
 </script>
 </body>
 </html>
