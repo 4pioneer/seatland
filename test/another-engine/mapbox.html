@@ -130,14 +130,15 @@
    */
 
   const label = {
-    pillar: '기둥',
     mettingroom: '회의실',
+
     seat: '좌석',
-    toilet: '화장실',
-    lavatory: '양치실',
-    stair: '계단실',
+
     cabinet: '캐비넷(QA수납)',
     onebooth: '1인 부스',
+
+    toilet: '화장실',
+    lavatory: '양치실',
     ad: 'ad',
     ahu: 'AHU',
     av: 'AV',
@@ -145,8 +146,11 @@
     ev: 'ev',
     ps: 'ps',
     tps: 'tps',
-    wall: 'wall',
     unknown: 'unknown',
+
+    pillar: '기둥',
+    wall: 'wall',
+    stair: '계단실',
   };
 
   const types = Object.keys(label);
@@ -267,7 +271,7 @@
 
     map.addSource('9th', {
       type: 'geojson',
-      data: '../../data/data-greyfactory-9th.geojson',
+      data: '../../data/data-greyfactory-9th-type.geojson',
     });
 
     const geojson = {
@@ -284,14 +288,35 @@
     const exportButton = document.getElementById('export');
     exportButton.addEventListener('click', () => exportGeoJSON(geojson));
 
+    const floorType = ['to-string', ['get', 'type']];
+    const floorColor = ['#f9c5d1', '#f46e6f', '#148c8a', '#2e3359', '#1d1d1d'];
+
     map.addLayer(
       {
         id: '9th',
         source: '9th',
         'type': 'fill',
         'paint': {
-          'fill-color': 'rgba(200, 100, 240, 0.4)',
-          'fill-outline-color': 'rgba(200, 100, 240, 1)'
+          'fill-color': [
+            'case',
+            ['==', floorType, 'mettingroom'],
+            floorColor[0],
+            ['==', floorType, 'seat'],
+            floorColor[1],
+            ['==', floorType, 'cabinet'],
+            floorColor[2],
+            ['==', floorType, 'onebooth'],
+            floorColor[2],
+            ['==', floorType, 'pillar'],
+            floorColor[4],
+            ['==', floorType, 'wall'],
+            floorColor[4],
+            ['==', floorType, 'stair'],
+            floorColor[4],
+            floorColor[3]
+          ],
+          'fill-opacity': 0.8,
+          'fill-outline-color': 'rgba(0, 0, 0, 0.5)'
         },
       },
     );
