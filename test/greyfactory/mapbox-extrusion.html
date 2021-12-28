@@ -104,6 +104,17 @@
         feature.properties.height = height;
       }
     });
+  };
+
+  const move = (geojson, x, y) => {
+    geojson.features.forEach(feature => {
+      const {coordinates} = feature.geometry;
+      coordinates[0].forEach(coord => {
+        const [coordX, coordY] = coord;
+        coord[0] = coordX + x;
+        coord[1] = coordY + y;
+      })
+    })
   }
 
 </script>
@@ -354,8 +365,16 @@
       console.log(`[${e.lngLat.lng}, ${e.lngLat.lat}]`);
     });
 
-    let defaultTypeValue = 'seat';
     const floorLayerId = '9th';
+    let defaultTypeValue = 'seat';
+
+    map.on('mouseenter', floorLayerId, () => {
+      map.getCanvas().style.cursor = 'default';
+    });
+
+    map.on('mouseleave', floorLayerId, () => {
+      map.getCanvas().style.cursor = '';
+    });
 
     map.on('click', floorLayerId, (e) => {
       const selectedFeature = map.queryRenderedFeatures(e.point, {
