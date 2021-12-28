@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Auto Fixer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 800px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap" class="section">
+    <h2>Auto Fixer</span></h2>
+    <div id="map" style="width:100%;height:800px;"></div>
+</div>
+<script id="code">
+
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+  xhr.open('GET', '../../data/data-greyfactory-properties.geojson', true);
+  xhr.addEventListener('load', function () {
+    const geojson = xhr.response;
+    // 선형 링은 경계 영역과 관련하여 오른손 법칙을 따라야 합니다. 즉, 외부 링은 시계 반대 방향이고 구멍은 시계 방향입니다.
+    const ccw = rewind(geojson, false);
+    console.log(JSON.stringify(ccw, null, 2));
+  });
+  xhr.send(null);
+
+  // https://github.com/mapbox/geojson-rewind/blob/33d0b498a3e43019931b742f6196d749022c7e45/index.js#L4
+  // API useage: rewind(geojson, clockwise)
+  // If clockwise is true, the outer ring is clockwise, otherwise it is counterclockwise.
+
+  function rewind(gj, outer) {
+    var type = gj && gj.type, i;
+
+    if (type === 'FeatureCollection') {
+      for (i = 0; i < gj.features.length; i++) rewind(gj.features[i], outer);
+
+    } else if (type === 'GeometryCollection') {
+      for (i = 0; i < gj.geometries.length; i++) rewind(gj.geometries[i], outer);
+
+    } else if (type === 'Feature') {
+      rewind(gj.geometry, outer);
+
+    } else if (type === 'Polygon') {
+      rewindRings(gj.coordinates, outer);
+
+    } else if (type === 'MultiPolygon') {
+      for (i = 0; i < gj.coordinates.length; i++) rewindRings(gj.coordinates[i], outer);
+    }
+
+    return gj;
+  }
+
+  function rewindRings(rings, outer) {
+    if (rings.length === 0) return;
+
+    rewindRing(rings[0], outer);
+    for (var i = 1; i < rings.length; i++) {
+      rewindRing(rings[i], !outer);
+    }
+  }
+
+  function rewindRing(ring, dir) {
+    var area = 0, err = 0;
+    for (var i = 0, len = ring.length, j = len - 1; i < len; j = i++) {
+      var k = (ring[i][0] - ring[j][0]) * (ring[j][1] + ring[i][1]);
+      var m = area + k;
+      err += Math.abs(area) >= Math.abs(k) ? area - m + k : k - m + area;
+      area = m;
+    }
+    if (area + err >= 0 !== !!dir) ring.reverse();
+  }
+</script>
+
+</body>
+</html>

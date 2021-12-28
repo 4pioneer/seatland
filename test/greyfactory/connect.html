@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <title>Connect Map</title>
+    <link href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css"
+          rel="stylesheet"
+          type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+    <script src="https://static.navercorp.com/static/libs/jquery/3.6.0/jquery.min.js" type='text/javascript'></script>
+    <script src="https://static.navercorp.com/static/libs/jquery.ui/1.12.1/jquery-ui.min.js"
+            type="text/javascript"></script>
+    <script src="https://static.navercorp.com/static/libs/jquery.plugins/form/jquery.form.min.js"
+            type="text/javascript"></script>
+    <script src="https://static.navercorp.com/static/libs/jquery.plugins/cookie/1.4.1/jquery.cookie.js"
+            type="text/javascript"></script>
+    <style>
+        #map {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: #EBEDEF;
+            position: fixed;
+        }
+
+        .ol-mouse-position {
+            font-size: 40px;
+            color: #DD4A48;
+        }
+
+        .label {
+            background-color: #ebedef;
+            padding: 0 2px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px 1px rgb(0 0 0 / 10%);
+            border: solid 1px #c9c9c9;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: .06em;
+            z-index: 10;
+            font-family: 'TestBed', sans-serif;
+        }
+    </style>
+</head>
+</head>
+<body>
+<div class="section" id="wrap">
+    <h2>Connect Map</span></h2>
+    <div id="labelDiv"></div>
+    <div id="map"></div>
+</div>
+
+<script>
+  function isNotBlank(str) {
+    return null !== str && 'undefined' !== typeof str && 0 < String(str).trim().length;
+  }
+
+  function isThereSeatNo(seatNo) {
+    return !(seatNo === '' || seatNo === null);
+  }
+
+  function empFontSize(targetR) {
+    return (((1 / targetR) * 14) + (targetR * 0.8)) * 0.1;
+  }
+
+  function getValue(feature, key) {
+    if (typeof feature === "undefined" || null === feature) {
+      return '';
+    }
+    let text = feature.get(key);
+    if (isNotBlank(text)) {
+      return text.toString();
+    } else {
+      return '';
+    }
+  }
+
+  function meetingRoomStyle(style, feature, resolution) {
+    if ('undefined' === typeof isAdmin || !isAdmin) {
+      return;
+    }
+    style.push(new ol.style.Style({
+      image: new ol.style.RegularShape({
+        radius: 5 / (10 * resolution),
+        points: 4,
+        angle: Math.PI / 4,
+        fill: new ol.style.Fill({
+          color: '#4d4d4d'
+        })
+      })
+    }))
+  }
+
+  function etcStyle(style, feature, resolution) {
+    if ('undefined' === typeof isAdmin || !isAdmin) {
+      return;
+    }
+    style.push(new ol.style.Style({
+      image: new ol.style.RegularShape({
+        radius: 5 / (10 * resolution),
+        points: 4,
+        angle: Math.PI / 4,
+        fill: new ol.style.Fill({
+          color: '#4d4d4d'
+        })
+      })
+    }))
+  }
+
+  function seatStyle(style, feature, resolution) {
+    const seatNo = getValue(feature, 'seatNo');
+    let poiColor = getValue(feature, 'color');
+    let r = resolution * 100;
+    poiColor = '' === poiColor ? '#EFFFDB' : poiColor;
+    style.push(new ol.style.Style({
+      image: new ol.style.RegularShape({
+        radius1: ('undefined' === typeof isAdmin || !isAdmin) ? 0 : (r > 5 ? 100 / r : r > 4 ? 90 / r : 70 / r),
+        points: 4,
+        angle: Math.PI / 4,
+        fill: new ol.style.Fill({
+          color: isThereSeatNo(seatNo) ? poiColor : '#dbdbdb'
+        })
+      })
+    }))
+  }
+
+  function mapStyle(feature, resolution) {
+    let featureType = getValue(feature, 'dp_code');
+    let style = [];
+
+    switch (featureType) {
+      /* 회의실 */
+      case '400501':
+        meetingRoomStyle(style, feature, resolution);
+        break;
+      /* 좌석 */
+      case '400502':
+        seatStyle(style, feature, resolution);
+        break;
+      /* 기타 */
+      default:
+        etcStyle(style, feature, resolution);
+        break;
+    }
+    return style;
+  }
+
+  function loadJSON(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('GET', url, true);
+    xhr.addEventListener('load', function () {
+      callback(xhr.response);
+    });
+    xhr.send(null);
+  }
+
+  function leftPad(str, max) {
+    str = str.toString();
+    return str.length < max ? leftPad("0" + str, max) : str;
+  }
+
+  function seatNoFontSize(targetR) {
+    return (((1 / targetR) * 14) + (targetR * 0.7)) * 0.1;
+  }
+
+  function spaceFontSize(targetR) {
+    return (((1 / targetR) * 14) + (targetR * 0.7)) * 0.1;
+  }
+
+  function drawSeatLabel(map, feature, poi) {
+    const mid = poi.mid;
+    let targetR = map.getView().getResolution() * 100;
+    let display = false;
+
+    let label = jQuery("<div>")
+      .attr("id", "label_mid_" + mid)
+      .addClass("label")
+      .hover(function () {
+        let target = jQuery("#label_mid_" + mid).find(".extra");
+        jQuery(".label").parent().css("z-index", 0);
+        if (target.css('display') === 'none') {
+          jQuery(".label").find(".extra").hide();
+          jQuery("#label_mid_" + mid).parent().css("z-index", 1000);
+          jQuery("#label_mid_" + mid).find(".extra").show();
+        }
+      });
+
+    let seatNoLabel;
+    /* 좌석번호 */
+    if (isNotBlank(poi.poiNm)) {
+      display = true;
+
+      seatNoLabel = jQuery("<div>").addClass("seatNo empty")
+        .text(leftPad(poi.poiNm, 3))
+        .css('fontSize', seatNoFontSize(targetR) + 'em');
+      label = label.append(seatNoLabel);
+    }
+
+    /* 사원명 */
+    if (isNotBlank(poi.resourceNm)) {
+      if ('undefined' !== typeof seatNoLabel) {
+        seatNoLabel.removeClass("empty");
+      }
+
+      display = true;
+      let resourceNm = poi.resourceNm.substring(0, 7);
+      const midLabel = jQuery("<div>").addClass("mid").addClass("extra")
+        .text(resourceNm)
+        .css('fontSize', empFontSize(targetR) + 'em');
+      label = label.append(midLabel);
+    }
+
+    /* 설명 */
+    if (isNotBlank(poi.description)) {
+      display = true;
+      const desc = jQuery("<div>").addClass("desc").addClass("extra").text(poi.description);
+      label.append(desc);
+    }
+
+    if (!display) {
+      return;
+    }
+
+    jQuery("#labelDiv").append(label);
+    const type = feature.getGeometry().getType();
+    let position;
+    if ('Point' === type) {
+      position = feature.getGeometry().getCoordinates();
+    } else {
+      position = ol.extent.getCenter(feature.getGeometry().getExtent());
+    }
+
+    const labelDiv = new ol.Overlay({
+      element: document.getElementById('label_mid_' + mid),
+      position: position,
+      positioning: 'center-center',
+    });
+
+    map.addOverlay(labelDiv);
+
+    if (targetR <= extraResolution) {
+      jQuery(".extra").show();
+    } else {
+      jQuery(".extra").hide();
+    }
+  }
+
+  function drawMeetingRoomLabel(map, feature, poi) {
+    let spaceNm = (null !== poi.resourceNm ? poi.resourceNm : poi.poiNm);
+    if (null == spaceNm || '' == spaceNm) {
+      return;
+    }
+
+    const mid = poi.mid;
+    let targetR = map.getView().getResolution() * 100;
+
+    let label = jQuery("<div>")
+      .attr("id", "label_mid_" + mid)
+      .addClass("label");
+
+    /* 회의실명 */
+    if (isNotBlank(poi.poiNm)) {
+      label.append(jQuery("<div title='" + spaceNm + "'>")
+        .addClass("space")
+        .text(spaceNm)
+        .css('fontSize', spaceFontSize(targetR) + 'em'));
+    }
+    jQuery("#labelDiv").append(label);
+
+    const labelDiv = new ol.Overlay({
+      element: document.getElementById('label_mid_' + mid),
+      position: feature.getGeometry().getCoordinates(),
+      positioning: 'center-center',
+    });
+
+    map.addOverlay(labelDiv);
+  }
+
+  function clearFeature(feature) {
+    feature.set('mid', '');
+    feature.set('poiNm', '');
+    feature.set('poiId', '');
+    feature.set('empNo', '');
+    feature.set('seatNo', '');
+    feature.set('spaceId', '');
+    feature.set('spaceNm', '');
+  }
+
+  function setProperties(map, feature, pois) {
+    let mid = feature.get('mid');
+    feature.setId(mid);
+
+    let poi = pois[mid];
+    clearFeature(feature);
+    if (typeof poi !== 'undefined') {
+      feature.set('mid', poi.mid);
+      feature.set('description', poi.description);
+      feature.set('poiType', poi.poiType);
+      if ('SEAT' === poi.poiType) {
+        feature.set('empNo', poi.poiId);
+        feature.set('seatNo', poi.poiNm);
+        feature.set('color', poi.poiColor);
+        feature.set('empNm', poi.resourceNm);
+
+        drawSeatLabel(map, feature, poi);
+
+      } else {
+        feature.set('spaceId', poi.poiId);
+        feature.set('spaceNm', null !== poi.resourceNm ? poi.resourceNm : poi.poiNm);
+
+        drawMeetingRoomLabel(map, feature, poi);
+      }
+    }
+  }
+</script>
+<script>
+  const imageURL = '../assets/img/background-9th.png',
+    geojsonURL = '../assets/json/9th-feature.geojson',
+    poiURL = '../assets/json/9th-poi.json',
+    projection = 'EPSG:4326',
+    source = new ol.source.Vector(),
+    meta = {
+      "floorId": "LOC_KR_202112_000701",
+      "officeId": null,
+      "version": "1",
+      "mapFileNm": "31e99018-1e72-49cf-a6f1-bdad6483708a",
+      "mapFileWidth": 1866,
+      "mapFileHeight": 1594,
+      "applyDate": "2021-12-22",
+      "applyYn": true,
+      "geojsonCopyUse": false,
+      "geojsonUpdateDatetime": "2021-12-24T18:34:31",
+      "insertDatetime": "2021-12-22T09:20:14",
+      "updateDatetime": "2021-12-22T09:20:14"
+    },
+    extent = [-1.1, -0.9, meta.mapFileWidth / 29.91 - 1.1, meta.mapFileHeight / 29.81 - 0.9],
+    robotSource = new ol.source.Vector(),
+    select = new ol.interaction.Select({style: null}),
+    extraResolution = 3;
+
+  const view = new ol.View({
+    zoom: 3,
+    projection,
+    minZoom: 4.5,
+    maxZoom: 6.5,
+    extent: [-30, -30, 130, 110]
+  });
+
+  const control = new ol.control.defaults({
+    attribution: false,
+    rotate: false
+  });
+
+  const map = new ol.Map({
+    target: 'map',
+    view,
+    controls: control,
+    interactions: ol.interaction.defaults({altShiftDragRotate: false, pinchRotate: false})
+  });
+
+  map.addInteraction(select);
+
+  const imageLayer = new ol.layer.Image({
+    source: new ol.source.ImageStatic({
+      url: imageURL,
+      projection,
+      imageExtent: extent,
+      imageSmoothing: true
+    }),
+    zIndex: 1
+  });
+  map.addLayer(imageLayer);
+
+  const vectorLayer = new ol.layer.Vector({
+    source: source,
+    zIndex: 200,
+    opacity: 0.8,
+    style: mapStyle
+  });
+  map.addLayer(vectorLayer);
+
+  const loadGeoJSONComplete = (json) => {
+    source.addFeatures((new ol.format.GeoJSON()).readFeatures(json, {
+      dataProjection: projection,
+      featureProjection: projection
+    }))
+    ;
+  };
+
+  loadJSON(geojsonURL, loadGeoJSONComplete);
+
+  view.setCenter(ol.extent.getCenter(extent));
+  map.getView().fit(extent, map.getSize());
+
+  const addFeatureProperties = (json) => {
+    source.forEachFeature(feature => setProperties(map, feature, json));
+    robotSource.forEachFeature(feature => setProperties(map, feature, json));
+  };
+
+  loadJSON(poiURL, addFeatureProperties)
+</script>
+</body>
+</html>
