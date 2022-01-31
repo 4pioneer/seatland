@@ -5,6 +5,7 @@
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
     <title>Create Grid</title>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
     <style>
@@ -16,27 +17,13 @@
             background-color: #EBEDEF;
             position: fixed;
         }
-        #export {
-            bottom: 24px;
-            right: 14px;
-            position: absolute;
-        }
-        #textarea {
-            right: 14px;
-            top: 14px;
-            width: 115px;
-            height: 260px;
-            position: absolute;
-        }
     </style>
 </head>
 </head>
 <body>
 <div class='section' id='wrap'>
-    <h2>MapBox Edit Properties</span></h2>
+    <h2>Create Grid</span></h2>
     <div id='map'></div>
-    <button id="export" type="button">EXPORT</button>
-    <textarea id="textarea"></textarea>
 </div>
 
 <script>
@@ -84,8 +71,12 @@
     return geojson.features.find(feature => featureId === getFeatureId(feature));
   };
 
-  const find = (geojson, propertyName, propertyValue) => {
+  const findByName = (geojson, propertyName, propertyValue) => {
     return geojson.features.find(feature => feature.properties[propertyName] === propertyValue);
+  };
+
+  const findByType = (geojson, type) => {
+    return geojson.features.find(feature => feature.properties.type === type);
   };
 
   const exportGeoJSON = (json, exportName = 'geojson') => {
@@ -128,60 +119,14 @@
     zoom: 19,
   });
 
-  /**
-   * 타입 분류
-   * - 기둥 : pillar
-   * - 회의실 : mettingroom
-   * - 좌석 : seat
-   * - 화장실(W) : toilet
-   * - 화장실(M) : toilet
-   * - 양치실 : lavatory
-   * - 계단실 : stair
-   * - 캐비넷(QA수납) : cabinet
-   * - 1인 부스 : onebooth
-   * - AD : ad
-   * - AHU : ahu
-   * - AV : av
-   * - EPS : eps
-   * - EV : ev
-   * - PS : ps
-   * - TPS : tps
-   */
-
-  const label = {
-    mettingroom: '회의실',
-
-    seat: '좌석',
-
-    cabinet: '캐비넷(QA수납)',
-    onebooth: '1인 부스',
-
-    toilet: '화장실',
-    lavatory: '양치실',
-    ad: 'ad',
-    ahu: 'AHU',
-    av: 'AV',
-    eps: 'eps',
-    ev: 'ev',
-    ps: 'ps',
-    tps: 'tps',
-    unknown: 'unknown',
-
-    pillar: '기둥',
-    wall: 'wall',
-    stair: '계단실',
-  };
-
-  const types = Object.keys(label);
-  const textarea = document.getElementById('textarea');
-  textarea.value = types.join('\n');
-
   const lt = [127.10465294151231, 37.3593150852346],
     rt = [127.10570973186645, 37.3593150852346],
     rb = [127.10570973186645, 37.35846230345918],
     lb = [127.10465294151231, 37.35846230345918];
 
   map.on('load', () => {
+
+    // lt, rt, rb, lb 마커 추가
     map.addSource('guide-markers', {
       type: 'geojson',
       data: {
@@ -231,12 +176,14 @@
       }
     });
 
+    // 배경 이미지 추가
     map.addSource('bg-image', {
       'type': 'image',
       'url': '../../data/data-1784-9th-guide-bg.png',
       'coordinates': [lt, rt, rb, lb]
     });
 
+    // 배경 이미지 추가
     map.addLayer({
       id: 'bg-image',
       'type': 'raster',
@@ -249,6 +196,7 @@
     const label = ['to-string', ['get', 'label']];
     const colors = ['#18AFD0', '#FD6368', '#FFB900', '#6967CE', '#FFFFFF'];
 
+    // 가이드 마커 컬러
     map.addLayer({
       id: 'guide-markers',
       type: 'circle',
@@ -271,6 +219,7 @@
       }
     });
 
+    // 가이드 마커 라벨
     map.addLayer({
       'id': 'guide-markers-label',
       'type': 'symbol',
@@ -288,28 +237,42 @@
       }
     });
 
+    // 9층 geojson 추가
     map.addSource('9th', {
       type: 'geojson',
       data: '../../data/data-1784-9th-type.geojson',
     });
 
+    /**
+     * 타입 분류
+     * - 기둥 : pillar
+     * - 회의실 : mettingroom
+     * - 좌석 : seat
+     * - 화장실(W) : toilet
+     * - 화장실(M) : toilet
+     * - 양치실 : lavatory
+     * - 계단실 : stair
+     * - 캐비넷(QA수납) : cabinet
+     * - 1인 부스 : onebooth
+     * - AD : ad
+     * - AHU : ahu
+     * - AV : av
+     * - EPS : eps
+     * - EV : ev
+     * - PS : ps
+     * - TPS : tps
+     */
+      // 9층 피쳐 추가
     const geojson = {
-      'type': 'FeatureCollection',
-      features: [],
-    };
+        'type': 'FeatureCollection',
+        features: [],
+      };
     window.geojson = geojson;
-
-    map.on('idle', () => {
-      if (geojson.features.length !== 0) return;
-      geojson.features = getFeatures(map, floorLayerId);
-    });
-
-    const exportButton = document.getElementById('export');
-    exportButton.addEventListener('click', () => exportGeoJSON(geojson));
 
     const floorType = ['to-string', ['get', 'type']];
     const floorColor = ['#f9c5d1', '#f46e6f', '#148c8a', '#2e3359', '#1d1d1d'];
 
+    // 9층 스타일 추가
     map.addLayer(
       {
         id: '9th',
@@ -340,68 +303,104 @@
       },
     );
 
-    map.on('click', (e) => {
-      console.log(`[${e.lngLat.lng}, ${e.lngLat.lat}]`);
-    });
-
     const floorLayerId = '9th';
-    let defaultTypeValue = 'seat';
-
-    map.on('mouseenter', floorLayerId, () => {
-      map.getCanvas().style.cursor = 'default';
+    map.on('idle', () => {
+      if (geojson.features.length !== 0) return;
+      geojson.features = getFeatures(map, floorLayerId);
+      setTimeout(createGrid, 100);
     });
 
-    map.on('mouseleave', floorLayerId, () => {
-      map.getCanvas().style.cursor = '';
+    map.on('click', (e) => {
+      console.log('e', e);
+
+      const features = map.queryRenderedFeatures(e.point);
+      console.log('features', features);
+      // const feature = e.features[0];
+      // console.log('feature', feature);
+      // console.log('feature coordinates', feature.geometry.coordinates);
+      console.log(`click coordinate[${e.lngLat.lng}, ${e.lngLat.lat}]`);
     });
 
-    map.on('click', floorLayerId, (e) => {
-      const selectedFeature = map.queryRenderedFeatures(e.point, {
-        layers: [floorLayerId]
-      })?.[0];
-      if (!selectedFeature) return;
+    // draw grid
+    // 좌석 넓이 높이 확인
+    // lb.x -> rt.x
+    // lb.y -> rt.y
+    function createGrid() {
+      console.log('createGrid', geojson.features);
+      const floorLineString = turf.lineString([lt, rt, rb, lb]);
+      const [floorMinX, floorMinY, floorMaxX, floorMaxY] = turf.bbox(floorLineString);
+      const floorWidth = floorMaxX - floorMinX;
+      const floorHeight = floorMaxY - floorMinY;
 
-      const {employee, type} = e.features[0]?.properties;
-      const html =
-        `<div>
-            <input id="input-employee" type="text" name="employee" size="10" value="">
-            <button id="button-employee" name="confirm" type="button">사번 입력</button>
-            <br>
-            <input id="input-type" type="text" name="type" size="10" value="${defaultTypeValue}">
-            <button id="button-type" name="confirm" type="button">타입 입력</button>
-        </div>`;
+      // 좌석을 특정해서 가져올만한 정보가 없어서 우선 수기로 입력하여 계산
+      // const seat = findByType(geojson, 'seat');
+      // const seat = findByName(geojson, 'name', '-');
+      // const { coordinates } = seat.geometry;
+      // const seatLineString = turf.lineString(coordinates[0]);
+      // const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
+      // const seatWidth = seatMaxX - seatMinX;
+      // const seatHeight = seatMaxY - seatMinY;
 
-      new mapboxgl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML(html)
-        .addTo(map);
+      const coordinates = [
+        [127.10469245910645, 37.359132094397935],
+        [127.10469245910645, 37.359149682962965],
+        [127.10472179576755, 37.359149682962965],
+        [127.10472179576755, 37.359132094397935],
+        [127.10469245910645, 37.359132094397935]
+      ];
 
-      const inputEmployee = document.getElementById('input-employee');
-      inputEmployee.value = getDefaultEmployee(employee);
-      const inputType = document.getElementById('input-type');
-      inputType.addEventListener('keyup', () => {
-        defaultTypeValue = inputType.value;
+      const seatLineString = turf.lineString(coordinates);
+      const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
+      const seatWidth = seatMaxX - seatMinX;
+      const seatHeight = seatMaxY - seatMinY;
+
+      const countX = floorWidth / seatWidth;
+      const countY = floorHeight / seatHeight;
+      console.log('countX', countX, 'countY', countY);
+
+      // debugGrid([lt, rt, rb, lb, lt,]);
+      // debugGrid(coordinates);
+    }
+
+
+    function debugGrid(coordinates) {
+      map.addSource('grid', {
+        'type': 'geojson',
+        'data': {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Polygon',
+            'coordinates': [
+              coordinates
+            ]
+          }
+        }
       });
-      const buttonEmployee = document.getElementById('button-employee');
-      const buttonType = document.getElementById('button-type');
-      buttonEmployee.addEventListener('click', () => {
-        updateGeoJSON({
-          geojson,
-          featureId: getFeatureId(selectedFeature),
-          propertyName: 'employee',
-          propertyValue: document.getElementById('input-employee').value
-        });
-      });
-      buttonType.addEventListener('click', () => {
-        updateGeoJSON({
-          geojson,
-          featureId: getFeatureId(selectedFeature),
-          propertyName: 'type',
-          propertyValue: document.getElementById('input-type').value
-        });
-      });
-    });
 
+      // Add a new layer to visualize the polygon.
+      map.addLayer({
+        'id': 'grid-layer',
+        'type': 'fill',
+        'source': 'grid', // reference the data source
+        'layout': {},
+        'paint': {
+          'fill-color': '#0080ff', // blue color fill
+          'fill-opacity': 0.5
+        }
+      });
+
+      // Add a black outline around the polygon.
+      map.addLayer({
+        'id': 'outline',
+        'type': 'line',
+        'source': 'grid',
+        'layout': {},
+        'paint': {
+          'line-color': '#000',
+          'line-width': 3
+        }
+      });
+    }
   });
 </script>
 </body>
