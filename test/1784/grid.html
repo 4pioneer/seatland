@@ -357,47 +357,97 @@
       const countX = floorWidth / seatWidth;
       const countY = floorHeight / seatHeight;
       console.log('countX', countX, 'countY', countY);
+      console.log('coordinates', coordinates);
 
-      // debugGrid([lt, rt, rb, lb, lt,]);
-      // debugGrid(coordinates);
+      // drawPolygon('grid', [[lt, rt, rb, lb, lt]]);
+      // drawPolygon('grid', [coordinates]);
+      // drawPolyline('grid', [lt, rt, rb, lb, lt]);
+
+      const gridXY = [];
+      for (let i = 0; i < countX; i += 1) {
+        gridXY[i] = [];
+        const prevX = i - 1 < 0 ? 0 : i;
+        const nextX = i + 1 ;
+        const minX = floorMinX + seatWidth * prevX;
+        const maxX = floorMinX + seatWidth * nextX;
+        for (let j = 0; j < countY; j += 1) {
+          const prevY = j - 1 < 0 ? 0 : j;
+          const nextY = j + 1;
+          const minY = floorMinY + seatHeight * prevY;
+          const maxY = floorMinY + seatHeight * nextY;
+          gridXY[i][j] = [[minX, maxY], [maxX, maxY], [maxX, minY], [minX, minY], [minX, maxY]];
+        }
+      }
+
+      // drawPolyline(`gridXY`, gridXY.flat());
+      drawPolygon(`gridXY`, gridXY.flat());
     }
 
 
-    function debugGrid(coordinates) {
-      map.addSource('grid', {
+    function drawPolygon(id, coordinates) {
+      console.log('drawPolygon', coordinates);
+      map.addSource(id, {
         'type': 'geojson',
         'data': {
           'type': 'Feature',
           'geometry': {
             'type': 'Polygon',
-            'coordinates': [
-              coordinates
-            ]
+            'coordinates': coordinates
           }
         }
       });
 
       // Add a new layer to visualize the polygon.
       map.addLayer({
-        'id': 'grid-layer',
+        'id': `${id}-polygon`,
         'type': 'fill',
-        'source': 'grid', // reference the data source
+        'source': id, // reference the data source
         'layout': {},
         'paint': {
-          'fill-color': '#0080ff', // blue color fill
-          'fill-opacity': 0.5
+          'fill-color': '#e84393', // blue color fill
+          'fill-opacity': 1
         }
       });
 
       // Add a black outline around the polygon.
       map.addLayer({
-        'id': 'outline',
+        'id': `${id}-outline`,
         'type': 'line',
-        'source': 'grid',
+        'source': id,
         'layout': {},
         'paint': {
-          'line-color': '#000',
-          'line-width': 3
+          'line-color': '#e84393',
+          'line-width': 1
+        }
+      });
+    }
+
+    function drawPolyline(id, coordinates) {
+      console.log('drawPolyline', coordinates);
+
+      // L.polyline(coordinates, 'red').addTo(map);
+      map.addSource(id, {
+        'type': 'geojson',
+        'data': {
+          'type': 'Feature',
+          'properties': {},
+          'geometry': {
+            'type': 'LineString',
+            'coordinates': coordinates
+          }
+        }
+      });
+      map.addLayer({
+        'id': `${id}-polyline`,
+        'type': 'line',
+        'source': id,
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-color': '#e84393',
+          'line-width': 1
         }
       });
     }
