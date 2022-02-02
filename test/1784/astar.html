@@ -4,7 +4,11 @@
     <meta charset='UTF-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
-    <title>Create Grid</title>
+    <title>AStar</title>
+    <script src="../libs/astar.js"></script>
+    <script src="../libs/dat.gui.min.js"></script>
+    <script src="./gui/astar-gui.js"></script>
+    <script src="https://unpkg.com/rbush@2.0.1/rbush.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
@@ -22,7 +26,7 @@
 </head>
 <body>
 <div class='section' id='wrap'>
-    <h2>Create Grid</span></h2>
+    <h2>AStar</span></h2>
     <div id='map'></div>
 </div>
 
@@ -106,11 +110,13 @@
         coord[1] = coordY + y;
       })
     })
-  }
+  };
 
   function drawPolygon(id, coordinates) {
     console.log('drawPolygon', coordinates);
-    map.addSource(id, {
+
+    const sourceId = `${id}-source`;
+    map.addSource(sourceId, {
       'type': 'geojson',
       'data': {
         'type': 'Feature',
@@ -123,9 +129,9 @@
 
     // Add a new layer to visualize the polygon.
     map.addLayer({
-      'id': `${id}-polygon`,
+      'id': id,
       'type': 'fill',
-      'source': id, // reference the data source
+      'source': sourceId, // reference the data source
       'layout': {},
       'paint': {
         'fill-color': '#e84393', // blue color fill
@@ -137,7 +143,7 @@
     map.addLayer({
       'id': `${id}-outline`,
       'type': 'line',
-      'source': id,
+      'source': sourceId,
       'layout': {},
       'paint': {
         'line-color': '#e84393',
@@ -146,10 +152,18 @@
     });
   }
 
+  function clearPolygon(id) {
+    if (!map.getLayer(id)) return;
+    map.removeLayer(id);
+    map.removeLayer(`${id}-outline`);
+    map.removeSource(`${id}-source`);
+  }
+
   function drawPolyline(id, coordinates) {
     console.log('drawPolyline', coordinates);
 
-    map.addSource(id, {
+    const sourceId = `${id}-source`;
+    map.addSource(sourceId, {
       'type': 'geojson',
       'data': {
         'type': 'Feature',
@@ -161,9 +175,9 @@
       }
     });
     map.addLayer({
-      'id': `${id}-polyline`,
+      'id': id,
       'type': 'line',
-      'source': id,
+      'source': sourceId,
       'layout': {
         'line-join': 'round',
         'line-cap': 'round'
@@ -173,6 +187,81 @@
         'line-width': 1
       }
     });
+  }
+
+  function clearPolyline(id) {
+    if (!map.getLayer(id)) return;
+    map.removeLayer(id);
+    map.removeSource(`${id}-source`);
+  }
+
+  function getPointFeature(label, coordinates) {
+    return {
+      'type': 'Feature',
+      'properties': {
+        'label': label,
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': coordinates
+      }
+    };
+  }
+
+  function drawRoute(id, coordinates) {
+    const features = coordinates.map((coordinate) => getPointFeature('routePoint', coordinate));
+    console.log('drawRoute', id, coordinates);
+    console.log('features', features);
+    const sourceId = `${id}-source`;
+    map.addSource(sourceId, {
+      type: 'geojson',
+      data: {
+        'type': 'FeatureCollection',
+        'features': features
+      }
+    });
+
+    // 가이드 마커 컬러
+    map.addLayer({
+      id: id,
+      type: 'circle',
+      source: sourceId,
+      paint: {
+        'circle-radius': 2,
+        'circle-color': '#4CAF50',
+        'circle-stroke-color': 'white',
+        'circle-stroke-width': 1,
+        'circle-opacity': 1,
+      }
+    });
+  }
+
+  function clearRoute(id) {
+    if (!map.getLayer(id)) return;
+    map.removeLayer(id);
+    map.removeSource(`${id}-source`);
+  }
+
+  function runSearch(graph, start, end, options) {
+    if (!(graph instanceof Graph)) {
+      graph = new Graph(graph);
+    }
+    start = graph.grid[start[0]][start[1]];
+    end = graph.grid[end[0]][end[1]];
+    var sTime = new Date(),
+      result = astar.search(graph, start, end, options),
+      eTime = new Date();
+    return {
+      result: result,
+      text: pathToString(result),
+      time: (eTime - sTime)
+    };
+  }
+
+  function pathToString(result) {
+    return result.map(function (node) {
+      return "(" + node.x + "," + node.y + ")";
+    }).join("");
   }
 
 </script>
@@ -190,6 +279,8 @@
     rt = [127.10570973186645, 37.3593150852346],
     rb = [127.10570973186645, 37.35846230345918],
     lb = [127.10465294151231, 37.35846230345918];
+
+  let seatWidth, seatHeight;
 
   map.on('load', () => {
 
@@ -243,23 +334,6 @@
       }
     });
 
-    // 배경 이미지 추가
-    map.addSource('bg-image', {
-      'type': 'image',
-      'url': '../../data/data-1784-9th-guide-bg.png',
-      'coordinates': [lt, rt, rb, lb]
-    });
-
-    // 배경 이미지 추가
-    map.addLayer({
-      id: 'bg-image',
-      'type': 'raster',
-      'source': 'bg-image',
-      'paint': {
-        'raster-fade-duration': 0
-      }
-    });
-
     const label = ['to-string', ['get', 'label']];
     const colors = ['#18AFD0', '#FD6368', '#FFB900', '#6967CE', '#FFFFFF'];
 
@@ -301,6 +375,23 @@
       },
       'paint': {
         'text-color': 'white'
+      }
+    });
+
+    // 배경 이미지 추가
+    map.addSource('bg-image', {
+      'type': 'image',
+      'url': '../../data/data-1784-9th-guide-bg.png',
+      'coordinates': [lt, rt, rb, lb]
+    });
+
+    // 배경 이미지 추가
+    map.addLayer({
+      id: 'bg-image',
+      'type': 'raster',
+      'source': 'bg-image',
+      'paint': {
+        'raster-fade-duration': 0
       }
     });
 
@@ -374,39 +465,43 @@
     map.on('idle', () => {
       if (geojson.features.length !== 0) return;
       geojson.features = getFeatures(map, floorLayerId);
+      setTimeout(makeTree, 100);
       setTimeout(createGrid, 100);
     });
 
     map.on('click', (e) => {
-      console.log('e', e);
-
       const features = map.queryRenderedFeatures(e.point);
+      const lng = e.lngLat.lng;
+      const lat = e.lngLat.lat;
+      console.log('e', e);
       console.log('features', features);
-      // const feature = e.features[0];
-      // console.log('feature', feature);
-      // console.log('feature coordinates', feature.geometry.coordinates);
-      console.log(`click coordinate[${e.lngLat.lng}, ${e.lngLat.lat}]`);
+      console.log(`coordinate[${lng}, ${lat}]`);
+      if (!seatWidth || !seatHeight) return;
+      const xIndex = Math.floor((lng - lb[0]) / seatWidth);
+      const yIndex = Math.floor((lat - lb[1]) / seatHeight);
+      console.log(`[${xIndex}][${yIndex}]`);
     });
+
+    const tree = new rbush();
+
+    function makeTree() {
+      const features = geojson.features;
+      features.forEach((feature) => {
+        const line = turf.lineString(feature.geometry.coordinates[0]);
+        const [minX, minY, maxX, maxY] = turf.bbox(line);
+        tree.insert({minX, minY, maxX, maxY});
+      });
+    }
 
     // draw grid
     // 좌석 넓이 높이 확인
     // lb.x -> rt.x
     // lb.y -> rt.y
     function createGrid() {
-      console.log('createGrid', geojson.features);
       const floorLineString = turf.lineString([lt, rt, rb, lb]);
       const [floorMinX, floorMinY, floorMaxX, floorMaxY] = turf.bbox(floorLineString);
       const floorWidth = floorMaxX - floorMinX;
       const floorHeight = floorMaxY - floorMinY;
-
-      // 좌석을 특정해서 가져올만한 정보가 없어서 우선 수기로 입력하여 계산
-      // const seat = findByType(geojson, 'seat');
-      // const seat = findByName(geojson, 'name', '-');
-      // const { coordinates } = seat.geometry;
-      // const seatLineString = turf.lineString(coordinates[0]);
-      // const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
-      // const seatWidth = seatMaxX - seatMinX;
-      // const seatHeight = seatMaxY - seatMinY;
 
       const coordinates = [
         [127.10469245910645, 37.359132094397935],
@@ -418,23 +513,20 @@
 
       const seatLineString = turf.lineString(coordinates);
       const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
-      const seatWidth = seatMaxX - seatMinX;
-      const seatHeight = seatMaxY - seatMinY;
+      seatWidth = (seatMaxX - seatMinX) * 0.25;
+      seatHeight = (seatMaxY - seatMinY) * 0.25;
 
       const countX = (floorWidth / seatWidth) - 1;
       const countY = floorHeight / seatHeight;
-      console.log('countX', countX, 'countY', countY);
-      console.log('coordinates', coordinates);
-
-      // drawPolygon('grid', [[lt, rt, rb, lb, lt]]);
-      // drawPolygon('grid', [coordinates]);
-      // drawPolyline('grid', [lt, rt, rb, lb, lt]);
 
       const gridXY = [];
+      const astarGraph = [];
+
       for (let i = 0; i < countX; i += 1) {
         gridXY[i] = [];
+        const graph = astarGraph[i] = [];
         const prevX = i - 1 < 0 ? 0 : i;
-        const nextX = i + 1 ;
+        const nextX = i + 1;
         const minX = floorMinX + seatWidth * prevX;
         const maxX = floorMinX + seatWidth * nextX;
         for (let j = 0; j < countY; j += 1) {
@@ -443,14 +535,45 @@
           const minY = floorMinY + seatHeight * prevY;
           const maxY = floorMinY + seatHeight * nextY;
           gridXY[i][j] = [[minX, maxY], [maxX, maxY], [maxX, minY], [minX, minY], [minX, maxY]];
+          graph[j] = Number(!tree.collides({minX, minY, maxX, maxY}));
         }
       }
 
-      // drawPolyline(`gridXY`, gridXY.flat());
-      drawPolygon(`gridXY`, gridXY.flat());
+      // drawPolygon(`gridXY`, gridXY.flat());
+      // console.log('astar', astarGraph);
+
+      initGUI({
+        rt, rb, lt, lb,
+        geojson,
+        map,
+        gridXY,
+        astarGraph,
+        seatWidth,
+        seatHeight,
+        drawPolygon,
+        clearPolygon,
+        drawPolyline,
+        clearPolyline,
+        runSearch,
+        showRoute,
+      });
     }
 
+    function showRoute(route) {
+      const routeId = 'route';
+      const coordinates = route.result.map((xyAstarGraphIndex) => getCoordinateByIndex(xyAstarGraphIndex));
+      clearRoute(routeId);
+      drawRoute(routeId, coordinates);
+    }
+
+    function getCoordinateByIndex(xyAstarGraphIndex) {
+      const {x, y} = xyAstarGraphIndex;
+      const [originX, originY] = lb;
+      return [originX + seatWidth * x, originY + seatHeight * y];
+    }
   });
+
+
 </script>
 </body>
 </html>
