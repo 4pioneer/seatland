@@ -4,7 +4,7 @@
     <meta charset='UTF-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
-    <title>AStar</title>
+    <title>AStar With Animate</title>
     <script src="../libs/astar.js"></script>
     <script src="../libs/dat.gui.min.js"></script>
     <script src="./gui/astar-gui.js"></script>
@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class='section' id='wrap'>
-    <h2>AStar</span></h2>
+    <h2>AStar With Animate</span></h2>
     <div id='map'></div>
 </div>
 
@@ -234,6 +234,70 @@
     map.removeSource(`${id}-source`);
   }
 
+  let animationId;
+
+  function animateRoute(id, coordinates) {
+    const origin = coordinates[0];
+    const point = {
+      'type': 'FeatureCollection',
+      'features': [
+        {
+          'type': 'Feature',
+          'properties': {},
+          'geometry': {
+            'type': 'Point',
+            'coordinates': origin
+          }
+        }
+      ]
+    };
+
+    const sourceId = `${id}-source`;
+    map.addSource(sourceId, {
+      'type': 'geojson',
+      'data': point
+    });
+
+    map.addLayer({
+      'id': id,
+      'source': sourceId,
+      'type': 'symbol',
+      'layout': {
+        'icon-image': 'robot',
+        'icon-size': 1,
+        'icon-rotate': ['get', 'bearing'],
+        'icon-rotation-alignment': 'map',
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true
+      }
+    });
+
+    let counter = 0;
+    const steps = coordinates.length;
+
+    function animate() {
+      const start = coordinates[counter >= steps ? counter - 1 : counter];
+      const end = coordinates[counter >= steps ? counter : counter + 1];
+      if (!start || !end) return;
+      point.features[0].geometry.coordinates = coordinates[counter];
+      // point.features[0].properties.bearing = turf.bearing(turf.point(start), turf.point(end));
+      map.getSource(sourceId).setData(point);
+      if (counter < steps) {
+        animationId = requestAnimationFrame(animate);
+      }
+      counter = counter + 1;
+    }
+
+    animate(counter);
+  }
+
+  function clearAnimateRoute(id) {
+    cancelAnimationFrame(animationId);
+    if (!map.getLayer(id)) return;
+    map.removeLayer(id);
+    map.removeSource(`${id}-source`);
+  }
+
   function runSearch(graph, start, end, options) {
     if (!(graph instanceof Graph)) {
       graph = new Graph(graph);
@@ -273,6 +337,11 @@
     lb = [127.10465294151231, 37.35846230345918];
 
   let seatWidth, seatHeight;
+
+  map.loadImage('../assets/img/robot.png', (error, image) => {
+    if (error) throw error;
+    map.addImage('robot', image);
+  });
 
   map.on('load', () => {
 
@@ -555,7 +624,7 @@
       const routeId = 'route';
       const coordinates = route.result.map((xyAstarGraphIndex) => getCoordinateByIndex(xyAstarGraphIndex));
       clearRoute(routeId);
-      drawRoute(routeId, coordinates);
+      animateRoute(routeId, coordinates);
     }
 
     function getCoordinateByIndex(xyAstarGraphIndex) {
@@ -564,7 +633,6 @@
       return [originX + seatWidth * x, originY + seatHeight * y];
     }
   });
-
 
 </script>
 </body>
