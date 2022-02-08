@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+    <title>Create Grid</title>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #map {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: #EBEDEF;
+            position: fixed;
+        }
+    </style>
+</head>
+</head>
+<body>
+<div class='section' id='wrap'>
+    <h2>Create Grid</span></h2>
+    <div id='map'></div>
+</div>
+
+<script>
+  const getDefaultEmployee = (value) => {
+    return value === '' || value === '-' ? 'KR' : value;
+  };
+
+  const featureToGeoJSON = (feature) => {
+    const {type, properties, geometry} = feature;
+    return {
+      type,
+      properties: {
+        ...properties
+      },
+      geometry: {
+        ...geometry
+      }
+    }
+  };
+
+  const getGeoJSON = (features) => {
+    return {
+      "type": "FeatureCollection",
+      features,
+    }
+  };
+
+  const getFeatures = (map, layerId) => {
+    return map.queryRenderedFeatures({layers: [layerId]}).reduce((accumulator, value) => {
+      accumulator.push(featureToGeoJSON(value));
+      return accumulator;
+    }, []);
+  };
+
+  const getFeatureId = (feature) => {
+    return feature?.geometry?.coordinates?.join(',') ?? '';
+  };
+
+  const updateGeoJSON = ({geojson, featureId, propertyName, propertyValue}) => {
+    const selectedFeature = getFeature({geojson, featureId});
+    selectedFeature.properties[propertyName] = propertyValue;
+  };
+
+  const getFeature = ({geojson, featureId}) => {
+    return geojson.features.find(feature => featureId === getFeatureId(feature));
+  };
+
+  const findByName = (geojson, propertyName, propertyValue) => {
+    return geojson.features.find(feature => feature.properties[propertyName] === propertyValue);
+  };
+
+  const findByType = (geojson, type) => {
+    return geojson.features.find(feature => feature.properties.type === type);
+  };
+
+  const exportGeoJSON = (json, exportName = 'geojson') => {
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(json));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  };
+
+  const changeHeight = (geojson, type, height) => {
+    geojson.features.forEach(feature => {
+      if (feature.properties.type === type) {
+        feature.properties.height = height;
+      }
+    });
+  };
+
+  const move = (geojson, x, y) => {
+    geojson.features.forEach(feature => {
+      const {coordinates} = feature.geometry;
+      coordinates[0].forEach(coord => {
+        const [coordX, coordY] = coord;
+        coord[0] = coordX + x;
+        coord[1] = coordY + y;
+      })
+    })
+  }
+
+  function drawPolygon(id, coordinates) {
+    console.log('drawPolygon', coordinates);
+    map.addSource(id, {
+      'type': 'geojson',
+      'data': {
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Polygon',
+          'coordinates': coordinates
+        }
+      }
+    });
+
+    // Add a new layer to visualize the polygon.
+    map.addLayer({
+      'id': `${id}-polygon`,
+      'type': 'fill',
+      'source': id, // reference the data source
+      'layout': {},
+      'paint': {
+        'fill-color': '#e84393', // blue color fill
+        'fill-opacity': 1
+      }
+    });
+
+    // Add a black outline around the polygon.
+    map.addLayer({
+      'id': `${id}-outline`,
+      'type': 'line',
+      'source': id,
+      'layout': {},
+      'paint': {
+        'line-color': '#e84393',
+        'line-width': 1
+      }
+    });
+  }
+
+  function drawPolyline(id, coordinates) {
+    console.log('drawPolyline', coordinates);
+
+    map.addSource(id, {
+      'type': 'geojson',
+      'data': {
+        'type': 'Feature',
+        'properties': {},
+        'geometry': {
+          'type': 'LineString',
+          'coordinates': coordinates
+        }
+      }
+    });
+    map.addLayer({
+      'id': `${id}-polyline`,
+      'type': 'line',
+      'source': id,
+      'layout': {
+        'line-join': 'round',
+        'line-cap': 'round'
+      },
+      'paint': {
+        'line-color': '#e84393',
+        'line-width': 1
+      }
+    });
+  }
+
+</script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidHdpcGl4ZWwiLCJhIjoiY2pjeTdwZDV0MDR0bDJ2bHFncTI1c2FrdSJ9.IGpAPpo9nmEOrJgjjEIvEw';
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    center: [127.10518200724181, 37.35885405128981],
+    zoom: 19,
+  });
+
+  const lt = [127.10465294151231, 37.3593150852346],
+    rt = [127.10570973186645, 37.3593150852346],
+    rb = [127.10570973186645, 37.35846230345918],
+    lb = [127.10465294151231, 37.35846230345918];
+
+  map.on('load', () => {
+
+    // lt, rt, rb, lb 마커 추가
+    map.addSource('guide-markers', {
+      type: 'geojson',
+      data: {
+        'type': 'FeatureCollection',
+        'features': [
+          {
+            'type': 'Feature',
+            'properties': {
+              'label': 'lt',
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': lt
+            }
+          },
+          {
+            'type': 'Feature',
+            'properties': {
+              'label': 'rt',
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': rt
+            }
+          },
+          {
+            'type': 'Feature',
+            'properties': {
+              'label': 'rb',
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': rb
+            }
+          },
+          {
+            'type': 'Feature',
+            'properties': {
+              'label': 'lb',
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': lb
+            }
+          }
+        ]
+      }
+    });
+
+    // 배경 이미지 추가
+    map.addSource('bg-image', {
+      'type': 'image',
+      'url': '../../data/data-1784-9th-guide-bg.png',
+      'coordinates': [lt, rt, rb, lb]
+    });
+
+    // 배경 이미지 추가
+    map.addLayer({
+      id: 'bg-image',
+      'type': 'raster',
+      'source': 'bg-image',
+      'paint': {
+        'raster-fade-duration': 0
+      }
+    });
+
+    const label = ['to-string', ['get', 'label']];
+    const colors = ['#18AFD0', '#FD6368', '#FFB900', '#6967CE', '#FFFFFF'];
+
+    // 가이드 마커 컬러
+    map.addLayer({
+      id: 'guide-markers',
+      type: 'circle',
+      source: 'guide-markers',
+      paint: {
+        'circle-color': [
+          'case',
+          ['==', label, 'lt'],
+          colors[0],
+          ['==', label, 'rt'],
+          colors[1],
+          ['==', label, 'rb'],
+          colors[2],
+          ['==', label, 'lb'],
+          colors[3],
+          colors[4]
+        ],
+        'circle-opacity': 0.6,
+        'circle-radius': 14
+      }
+    });
+
+    // 가이드 마커 라벨
+    map.addLayer({
+      'id': 'guide-markers-label',
+      'type': 'symbol',
+      'source': 'guide-markers',
+      'layout': {
+        'text-field': '{label}',
+        'text-font': [
+          'DIN Offc Pro Medium',
+          'Arial Unicode MS Bold'
+        ],
+        'text-size': 18,
+      },
+      'paint': {
+        'text-color': 'white'
+      }
+    });
+
+    // 9층 geojson 추가
+    map.addSource('9th', {
+      type: 'geojson',
+      data: '../../data/data-1784-9th-type.geojson',
+    });
+
+    /**
+     * 타입 분류
+     * - 기둥 : pillar
+     * - 회의실 : mettingroom
+     * - 좌석 : seat
+     * - 화장실(W) : toilet
+     * - 화장실(M) : toilet
+     * - 양치실 : lavatory
+     * - 계단실 : stair
+     * - 캐비넷(QA수납) : cabinet
+     * - 1인 부스 : onebooth
+     * - AD : ad
+     * - AHU : ahu
+     * - AV : av
+     * - EPS : eps
+     * - EV : ev
+     * - PS : ps
+     * - TPS : tps
+     */
+      // 9층 피쳐 추가
+    const geojson = {
+        'type': 'FeatureCollection',
+        features: [],
+      };
+    window.geojson = geojson;
+
+    const floorType = ['to-string', ['get', 'type']];
+    const floorColor = ['#f9c5d1', '#f46e6f', '#148c8a', '#2e3359', '#1d1d1d'];
+
+    // 9층 스타일 추가
+    map.addLayer(
+      {
+        id: '9th',
+        source: '9th',
+        'type': 'fill',
+        'paint': {
+          'fill-color': [
+            'case',
+            ['==', floorType, 'mettingroom'],
+            floorColor[0],
+            ['==', floorType, 'seat'],
+            floorColor[1],
+            ['==', floorType, 'cabinet'],
+            floorColor[2],
+            ['==', floorType, 'onebooth'],
+            floorColor[2],
+            ['==', floorType, 'pillar'],
+            floorColor[4],
+            ['==', floorType, 'wall'],
+            floorColor[4],
+            ['==', floorType, 'stair'],
+            floorColor[4],
+            floorColor[3]
+          ],
+          'fill-opacity': 0.8,
+          'fill-outline-color': 'rgba(0, 0, 0, 0.5)'
+        },
+      },
+    );
+
+    const floorLayerId = '9th';
+    map.on('idle', () => {
+      if (geojson.features.length !== 0) return;
+      geojson.features = getFeatures(map, floorLayerId);
+      setTimeout(createGrid, 100);
+    });
+
+    map.on('click', (e) => {
+      console.log('e', e);
+
+      const features = map.queryRenderedFeatures(e.point);
+      console.log('features', features);
+      // const feature = e.features[0];
+      // console.log('feature', feature);
+      // console.log('feature coordinates', feature.geometry.coordinates);
+      console.log(`click coordinate[${e.lngLat.lng}, ${e.lngLat.lat}]`);
+    });
+
+    // draw grid
+    // 좌석 넓이 높이 확인
+    // lb.x -> rt.x
+    // lb.y -> rt.y
+    function createGrid() {
+      console.log('createGrid', geojson.features);
+      const floorLineString = turf.lineString([lt, rt, rb, lb]);
+      const [floorMinX, floorMinY, floorMaxX, floorMaxY] = turf.bbox(floorLineString);
+      const floorWidth = floorMaxX - floorMinX;
+      const floorHeight = floorMaxY - floorMinY;
+
+      // 좌석을 특정해서 가져올만한 정보가 없어서 우선 수기로 입력하여 계산
+      // const seat = findByType(geojson, 'seat');
+      // const seat = findByName(geojson, 'name', '-');
+      // const { coordinates } = seat.geometry;
+      // const seatLineString = turf.lineString(coordinates[0]);
+      // const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
+      // const seatWidth = seatMaxX - seatMinX;
+      // const seatHeight = seatMaxY - seatMinY;
+
+      const coordinates = [
+        [127.10469245910645, 37.359132094397935],
+        [127.10469245910645, 37.359149682962965],
+        [127.10472179576755, 37.359149682962965],
+        [127.10472179576755, 37.359132094397935],
+        [127.10469245910645, 37.359132094397935]
+      ];
+
+      const seatLineString = turf.lineString(coordinates);
+      const [seatMinX, seatMinY, seatMaxX, seatMaxY] = turf.bbox(seatLineString);
+      const seatWidth = seatMaxX - seatMinX;
+      const seatHeight = seatMaxY - seatMinY;
+
+      const countX = (floorWidth / seatWidth) - 1;
+      const countY = floorHeight / seatHeight;
+      console.log('countX', countX, 'countY', countY);
+      console.log('coordinates', coordinates);
+
+      // drawPolygon('grid', [[lt, rt, rb, lb, lt]]);
+      // drawPolygon('grid', [coordinates]);
+      // drawPolyline('grid', [lt, rt, rb, lb, lt]);
+
+      const gridXY = [];
+      for (let i = 0; i < countX; i += 1) {
+        gridXY[i] = [];
+        const prevX = i - 1 < 0 ? 0 : i;
+        const nextX = i + 1 ;
+        const minX = floorMinX + seatWidth * prevX;
+        const maxX = floorMinX + seatWidth * nextX;
+        for (let j = 0; j < countY; j += 1) {
+          const prevY = j - 1 < 0 ? 0 : j;
+          const nextY = j + 1;
+          const minY = floorMinY + seatHeight * prevY;
+          const maxY = floorMinY + seatHeight * nextY;
+          gridXY[i][j] = [[minX, maxY], [maxX, maxY], [maxX, minY], [minX, minY], [minX, maxY]];
+        }
+      }
+
+      // drawPolyline(`gridXY`, gridXY.flat());
+      drawPolygon(`gridXY`, gridXY.flat());
+    }
+
+  });
+</script>
+</body>
+</html>
